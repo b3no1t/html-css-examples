@@ -56,7 +56,7 @@
 
 @layer demo {
 	/* 
-	animation keyframes use perentage for timeline
+	animation keyframes use percentage for timeline
 	link: https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
 	*/
 	@keyframes hover {
