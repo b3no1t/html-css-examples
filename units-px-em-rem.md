@@ -1,3 +1,5 @@
+![hero image](https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F516n6wvtnrp8fjkr2dzr.png)
+
 # Dans la conception de sites web, `rem`, `px` et `em` sont des unités de mesure utilisées pour les propriétés CSS, en particulier pour la taille des polices et l'espacement
 
 - `px (pixels)`: Il s'agit d'une unité fixe. Si vous fixez la largeur d'un élément à 100px, il aura toujours une largeur de 100 pixels, quels que soient les paramètres de l'utilisateur ou la taille de l'écran. C'est précis, mais non évolutif.
@@ -9,23 +11,11 @@
 ## Exemples
 
 ```
-body {
-    font-size: 16px; /* root font size */
-}
 
-h1 {
-    font-size: 2rem; /* 2 * 16px = 32px */
-}
-
-p {
-    font-size: 1.5em; /* if parent font size is 20px, then 1.5em = 30px */
-}
-
-footer {
-    font-size: 14px; /* parent size for example */
-}
-
-footer p {
-    font-size: 1em; /* 1 * 14px = 14px because this is relative to footer */
-}
 ```
+
+![some units](https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2v0z3jkdsqzhgi7kfcj5.png)
+
+### Source to translate and continue to develop units
+
+https://dev.to/akramnarejo/how-to-decide-css-units-for-responsive-website-nk4
