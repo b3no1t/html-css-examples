@@ -32,6 +32,7 @@
 		list-style: none;
 	}
 }
+
 @layer design {
 	section {
 		display: flex;
@@ -52,6 +53,7 @@
 		}
 	}
 }
+
 @layer demo {
 	/* 
 	animation keyframes use perentage for timeline
@@ -126,13 +128,7 @@
 					background-clip: text;
 					-webkit-text-fill-color: transparent;
 
-					i {
-						font-size: 4rem;
-						background: linear-gradient(120deg, #49a4ed 30%, #3d00a9 110%);
-						-webkit-background-clip: text;
-						background-clip: text;
-						-webkit-text-fill-color: transparent;
-					}
+
 				}
 				label {
 					width: 30px;
