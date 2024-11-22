@@ -62,6 +62,10 @@
 	@keyframes hover {
 		50% {
 			transform: scale(1.2);
+			opacity: 0.5;
+		}
+		52%{
+			opacity: 1;
 		}
 	}
 
@@ -188,6 +192,7 @@
 					pointer-events: none;
 					/* rend le lien non cliquable  */
 				}
+				
 				~ nav {
 					left: 0;
 				}
