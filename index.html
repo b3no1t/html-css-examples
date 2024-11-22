@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>User Interface Components</title>
-</head>
-<body>
- <div class="wrapper">
-  <div class="container">
-   <nav>
-   <ol>
-    <li><h2> <a href="./box-drop-shadow.html">box and drop-shadow</a></h2></li>
-    <li><h2><a href="./testimonial.html">testimonial v1</a></h2></li>
-    <li><h2><a href="./offcanvas2.html">Offcanvas v1</a></h2></li>
-   </ol>
-  </nav>
-  </div>
- </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Interface Components</title>
+    <style>
+      body {
+        font-family: "Roboto Slab", serif;
+        background: hsl(0, 0%, 80%);
+      }
+      .wrapper {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+      }
+      ol {
+        padding: 4em;
+        background-color: lightblue;
+        border-radius: 1em;
+        box-shadow: 0 0 10em hsl(0, 0%, 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <nav>
+          <ol>
+            <li>
+              <h2><a href="./checkbox-tabs.html">Tabs and Checkbox</a></h2>
+            </li>
+            <li>
+              <h2><a href="./offcanvas-js.html">Offcanvas vanilla JS</a></h2>
+            </li>
+            <li>
+              <h2><a href="./box-drop-shadow.html">Box and drop-shadow</a></h2>
+            </li>
+            <li>
+              <h2><a href="./testimonial.html">Testimonial v1</a></h2>
+            </li>
+            <li>
+              <h2><a href="./offcanvas2.html">Offcanvas CSS</a></h2>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </body>
 </html>

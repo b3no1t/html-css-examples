@@ -84,10 +84,10 @@
   window.addEventListener("DOMContentLoaded", (event) => {
    console.info("DOM is ready for interaction ✌️");
 
-   const bringOut = document.getElementById("trigger");
+   const trigger = document.getElementById("trigger");
    const nav = document.querySelector("nav");
 
-   bringOut.addEventListener("click", () => {
+   trigger.addEventListener("click", () => {
     console.log("☛ toggle");
     nav.classList.toggle("open");
    });
