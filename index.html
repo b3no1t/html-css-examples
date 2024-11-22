@@ -16,10 +16,22 @@
         height: 100vh;
       }
       ol {
+        background: linear-gradient(360deg, #fff 0%, lightgray 90%);
         padding: 4em;
-        background-color: lightblue;
-        border-radius: 1em;
-        box-shadow: 0 0 10em hsl(0, 0%, 100%);
+        border-radius: .5em;
+        box-shadow: 0 0 2em hsl(0, 0%, 50%);
+        filter: drop-shadow(0 0 8em hsl(0, 0%, 100%));
+
+        & li a{
+         text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+         color: black;
+         text-decoration: none;
+         transition: color 0.3s ease;
+         &:hover{
+          color: hsl(0, 0%, 100%);
+         }
+        }
+
       }
     </style>
   </head>
