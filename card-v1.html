@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card Template</title>
     <style>
+
+      @layer base {
       /* 1. Use a more-intuitive box-sizing model */
       *, *::before, *::after {
        box-sizing: border-box;
@@ -13,8 +15,8 @@
       * {
        margin: 0;
       }
+
       html {
-        box-sizing: border-box;
         font-family: system-ui, sans-serif;
         font-size: 16px;
         background: hsl(0, 0%, 80%);
@@ -23,18 +25,17 @@
         margin: 0;
         padding: 0;
       }
-      @layer base {
         .wrapper {
           width: 100%;
           display: grid;
           place-items: center;
           height: 100vh;
         }
-        .container {
+        /* .container {
           width: 100%;
           max-width: 1024px;
           margin: 0 auto;
-        }
+        } */
       }
 /* ---------------------------------------------------------
 CARD
@@ -49,14 +50,29 @@ CARD
        .card__image{
         width: 100%;
         max-width: 400px;
-
        }
-       .card__body{}
-       .card__title{}
-       .card__subtitle{}
-       .card__copy{}
-       .card__footer{}
-       .card__actions{}
+       .card__body{
+        padding: 2rem;
+       }
+       .card__title{
+        font-size: 2rem;
+       }
+       .card__subtitle{
+        opacity: .5;
+       }
+       .card__copy{
+        margin-top: 1.25rem;
+       }
+       .card__footer{
+       }
+       .card__actions{
+        background-color: gray;
+         button{
+          border: none;
+          width: 120px;
+          height: 80px; /* 80px valeur minimun pour le touch  */
+         }
+       }
       }
       @layer demo, base;
 
