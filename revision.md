@@ -1,36 +1,26 @@
 # Revision en vue du test
 
-HTML Template de base
+## HTML
 
-Imbrication de balises
+- HTML Template de base
+- Indentation de balises
+- Commentaires
+- Architecture dossiers et fichiers
+- Semantic HTML
+- Attributs: alt, title, class
 
-css
+## CSS
 
-- alignements
-- couleurs
-- background
+- Alignements
+- Couleurs
+- Background
 - Flexbox
-- table
-- position
+- Table
+- Position absolute et relative
+- Pseudo classes & Pseudo elements
 
-Architecture dossiers et fichiers
-Semantic HTML
+## Design
 
-## Components
-
-- Navigation
-- Header
-- iframe
-- Listes
-- main
-- Footer
-- blockquote
-- Les titres
-- Formulaire
-
-## Pages
-
-- Home
-- Contact
-- About
-- Guests
+- Page Homepage
+- Page categorie
+- Page detail

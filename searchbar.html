@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Bar</title>
+  </head>
+  <style>
+    @layer base {
+      /* 1. Use a more-intuitive box-sizing model */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      /* 2. Remove default margin */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        box-sizing: border-box;
+        font-family: system-ui, sans-serif;
+        font-size: 1rem;
+        background: hsl(0, 0%, 92%);
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .wrapper {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+      }
+    }
+
+    @layer demo {
+      .searchbar {
+
+      }
+      .searchbar__label {
+        color: black;
+        opacity: .25;
+        visibility: hidden;
+      }
+      .searchbar__bar {
+        padding: 0.25rem;
+        border: none;
+        width: 300px;
+      }
+      .searchbar__bar > div {
+       display: flex;
+       flex-direction: row;
+
+      }
+      .searchbar__bar::placeholder {
+        color: coral;
+        font-size: 2rem;
+      }
+      .searchbar__btn, .searchbar__bar {
+       height: 80px;
+       font-size: 2rem;
+      }
+      .searchbar__btn {
+        padding: 0.8rem;
+        border: none;
+        background-color: coral;
+        color: white;
+        font-weight: bold;
+      }
+    }
+    @layer demo,base;
+  </style>
+  <body>
+    <div class="wrapper">
+      <form action="result.html" class="searchbar">
+        <label for="site-search" class="searchbar__label">Search</label>
+        <div>
+          <input
+            type="search"
+            list="site-searchs"
+            id="site-search"
+            name="searchbar"
+            class="searchbar__bar"
+            size="30"
+            placeholder="Search Now"
+          />
+          <!-- 
+        <datalist id="site-searchs">
+          <option value="google"></option>
+          <option value="medium"></option>
+          <option value="dev.to"></option>
+          <option value="chrome.dev"></option>
+          <option value="firefox"></option>
+        </datalist>
+-->
+          <input type="submit" value="SEND" class="searchbar__btn" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

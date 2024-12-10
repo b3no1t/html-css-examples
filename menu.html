@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation B.E.M</title>
+  </head>
+  <style>
+    html {
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+      font-size: 16px;
+      background: hsl(0, 0%, 80%);
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    @layer base {
+      .wrapper {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+      }
+      .container {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+      }
+    }
+    @layer demo {
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header__logo {
+        width: 100px;
+        height: 100px;
+        background: url(https://picsum.photos/80) no-repeat center/cover;
+      }
+      .menu {
+        /*BLOCK*/
+        display: flex;
+        gap: 1rem;
+      }
+      .menu__item {
+        /*ELEMENT*/
+        list-style: none;
+      }
+      .menu__link {
+        /*ELEMENT*/
+        text-decoration: none;
+        color: #000;
+        font-size: 1.5rem;
+        display: block;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: background-color 0.3s ease-in-out,
+          color 0.3s ease-in-out 0.15s;
+        &:hover {
+          color: hsl(0, 0%, 100%);
+          background-color: hsl(0, 0%, 55%);
+        }
+      }
+      .menu__link--active {
+        /*MODIFIER*/
+        color: hsl(0, 0%, 100%);
+        background-color: hsl(0, 0%, 0%);
+      }
+    }
+    @layer demo, base;
+  </style>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <header>
+          <div class="header__logo"></div>
+          <nav>
+            <ul class="menu">
+              <li class="menu__item">
+                <a href="#" class="menu__link" aria-label="home">home</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link" aria-label="category"
+                  >category</a
+                >
+              </li>
+              <li class="menu__item">
+                <a
+                  href="#"
+                  class="menu__link menu__link--active"
+                  aria-label="posts"
+                  >posts</a
+                >
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link" aria-label="about">about</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link" aria-label="contact">contact</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+    </div>
+  </body>
+</html>
