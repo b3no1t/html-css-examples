@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation B.E.M</title>
+  </head>
+  <style>
+    html {
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
+    :root {
+      --clr-bg-1: #616161;
+      --clr-bg-2: #fdf6e3;
+      --clr-accent: lightgreen;
+      --clr-1: white;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: var(--clr-bg-2);
+      color: var(--clr-1);
+    }
+    @layer base {
+      .wrapper {
+        width: 100%;
+        padding-block: 2rem;
+        background-color: var(--clr-bg-1);
+      }
+      .container {
+        width: 100%;
+        max-width: 1024px;
+        margin: 0 auto;
+      }
+    }
+    @layer demo {
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 1rem;
+      }
+
+      .menu {
+        /*BLOCK*/
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+      }
+      .menu__item {
+        /*ELEMENT*/
+        list-style: none;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+          .menu__item--sub {
+            display: flex;
+          }
+        }
+      }
+      .menu__link {
+        /*ELEMENT*/
+        text-decoration: none;
+        font-size: 1.5rem;
+        display: flex;
+        padding: 0.5rem 1rem;
+        transition: color 0.15s ease-in-out;
+        color: var(--clr-1);
+
+        &:hover {
+          color: var(--clr-accent);
+        }
+      }
+      .menu__link--current {
+        color: var(--clr-accent);
+      }
+
+      .menu__item--sub {
+        /*MODIFIER*/
+        background-color: var(--clr-bg-1);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        padding: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .menu__item--sub .menu__link {
+        width: max-content;
+        &:hover {
+          color: var(--clr-accent);
+        }
+      }
+    }
+    @layer demo, base;
+  </style>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <header>
+          <h1 role="logo">Menu dropdown</h1>
+          <nav>
+            <ul class="menu">
+              <li class="menu__item">
+                <a href="#" class="menu__link" aria-label="home">home</a>
+              </li>
+              <li class="menu__item">
+                <span class="menu__link" aria-label="category">category </span>
+                <ul class="menu__item--sub">
+                  <li class="menu__item">
+                    <a href="#" class="menu__link" aria-label="sub category 1"
+                      >sub category 1</a
+                    >
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" class="menu__link" aria-label="sub category 2"
+                      >sub category 2</a
+                    >
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" class="menu__link" aria-label="sub category 3"
+                      >sub category 3</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="menu__item">
+                <a
+                  href="#"
+                  class="menu__link menu__link--current"
+                  aria-label="le posts"
+                  >posts</a
+                >
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link" aria-label="about">about</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link" aria-label="contact">contact</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+    </div>
+  </body>
+</html>

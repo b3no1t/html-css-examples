@@ -10,14 +10,11 @@
 	}
 
 	html {
-		font-size: 10px;
 		scroll-behavior: smooth;
 	}
 
 	body {
 		font-family: "Lato", sans-serif;
-		font-size: 1.5rem;
-		font-weight: 300;
 		background: #16161a;
 		color: #f3f3f3;
 	}
@@ -25,7 +22,7 @@
 	a {
 		text-decoration: none;
 		outline: none;
-		color: gray;
+		color: coral;
 	}
 
 	li {
@@ -38,8 +35,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 80vh;
-		font-size: 4rem;
+		height: 80svh;
 		color: #f1f2f3;
 
 		&:nth-child(odd) {
@@ -61,10 +57,9 @@
 	*/
 	@keyframes hover {
 		50% {
-			transform: scale(1.2);
-			opacity: 0.5;
+			opacity: 0.15;
 		}
-		52%{
+		80%{
 			opacity: 1;
 		}
 	}
@@ -108,18 +103,22 @@
 		}
 		nav {
 			position: fixed;
-			height: 100%;
+			height: 100svh;
 			width: 350px;
 			left: -350px;
 			overflow: hidden;
 			background: #bdddff;
 			transition: 0.3s ease;
-			padding: 40px 30px;
+			padding-inline: 1rem;
+			padding-block: 2rem;
+
+
 
 			> div {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+
 
 				a {
 					font-size: 2.5rem;
@@ -157,18 +156,14 @@
 				li {
 					cursor: pointer;
 					padding: 10px 0;
-					transform: translateX(-30px);
-					opacity: 0;
-					transition: 0.4s ease;
-					transform: translate(-50%);
 
 					counter-increment: nav-link-count;
 
 					a {
 						font-size: 2.5rem;
 						line-height: 1.5;
-						font-weight: 400;
-						color: gray;
+						font-weight: 300;
+						color: coral;
 						display: block;
 
 						&::after {
