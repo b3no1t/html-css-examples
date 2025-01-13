@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navigation B.E.M</title>
+    <meta name="author" content="Benoit Lepage" />
+    <meta name="description" content="Menu dropdown en css" />
+    <title>Menu dropdown</title>
   </head>
   <style>
-    html {
-      box-sizing: border-box;
-      font-family: system-ui, sans-serif;
-    }
     :root {
       --clr-bg-1: #616161;
       --clr-bg-2: #fdf6e3;
@@ -17,13 +15,18 @@
       --clr-1: white;
     }
     body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
       background-color: var(--clr-bg-2);
       color: var(--clr-1);
     }
+    @layer demo, base;
     @layer base {
+      /* 1. Use a more-intuitive box-sizing model */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
       .wrapper {
         width: 100%;
         padding-block: 2rem;
@@ -34,6 +37,13 @@
         max-width: 1024px;
         margin: 0 auto;
       }
+      h1 {
+        letter-spacing: -0.1ch;
+        & span {
+          display: block;
+          color: var(--clr-accent);
+        }
+      }
     }
     @layer demo {
       header {
@@ -42,11 +52,10 @@
         align-items: center;
         padding-inline: 1rem;
       }
-
       .menu {
         /*BLOCK*/
         display: flex;
-        gap: 1rem;
+        flex-wrap: wrap;
         justify-content: flex-end;
       }
       .menu__item {
@@ -54,6 +63,10 @@
         list-style: none;
         position: relative;
         cursor: pointer;
+        text-transform: capitalize;
+        font-weight: 900;
+        padding: 0.4rem .8rem;
+
         &:hover {
           .menu__item--sub {
             display: flex;
@@ -65,7 +78,6 @@
         text-decoration: none;
         font-size: 1.5rem;
         display: flex;
-        padding: 0.5rem 1rem;
         transition: color 0.15s ease-in-out;
         color: var(--clr-1);
 
@@ -73,55 +85,68 @@
           color: var(--clr-accent);
         }
       }
-      .menu__link--current {
+      [aria-current="true"] {
         color: var(--clr-accent);
       }
-
       .menu__item--sub {
         /*MODIFIER*/
         background-color: var(--clr-bg-1);
         position: absolute;
+        z-index: 1;
         top: 100%;
         left: 0;
         display: none;
-        padding: 0.5rem;
         flex-wrap: wrap;
+        border-radius: 4px;
       }
       .menu__item--sub .menu__link {
         width: max-content;
-        &:hover {
-          color: var(--clr-accent);
-        }
       }
     }
-    @layer demo, base;
   </style>
   <body>
     <div class="wrapper">
       <div class="container">
         <header>
-          <h1 role="logo">Menu dropdown</h1>
+          <h1>Menu dropdown<span>Simple Full CSS</span></h1>
           <nav>
             <ul class="menu">
               <li class="menu__item">
-                <a href="#" class="menu__link" aria-label="home">home</a>
+                <a href="#" class="menu__link" aria-label="Vers la page home"
+                  >home</a
+                >
               </li>
               <li class="menu__item">
-                <span class="menu__link" aria-label="category">category </span>
-                <ul class="menu__item--sub">
+                <span
+                  class="menu__link"
+                  aria-label="vers les categories"
+                  aria-current="true"
+                  >category</span
+                >
+                <ul class="menu__item--sub" aria-current="page">
                   <li class="menu__item">
-                    <a href="#" class="menu__link" aria-label="sub category 1"
-                      >sub category 1</a
+                    <a
+                      href="#"
+                      class="menu__link"
+                      aria-label="sous catégorie 1 de la page courante"
+                      >Sub Cat 1</a
                     >
                   </li>
                   <li class="menu__item">
-                    <a href="#" class="menu__link" aria-label="sub category 2"
+                    <a
+                      href="#"
+                      class="menu__link"
+                      aria-label="sous catégorie 2 de la page courante"
+                      aria-current="true"
                       >sub category 2</a
                     >
                   </li>
                   <li class="menu__item">
-                    <a href="#" class="menu__link" aria-label="sub category 3"
-                      >sub category 3</a
+                    <a
+                      href="#"
+                      class="menu__link"
+                      aria-label="sous catégorie 3 de la page courante"
+                      >Sous categorie 3</a
                     >
                   </li>
                 </ul>
@@ -129,16 +154,46 @@
               <li class="menu__item">
                 <a
                   href="#"
-                  class="menu__link menu__link--current"
-                  aria-label="le posts"
+                  class="menu__link"
+                  aria-label="le lien de la page posts"
                   >posts</a
                 >
               </li>
               <li class="menu__item">
-                <a href="#" class="menu__link" aria-label="about">about</a>
+                <a href="#" class="menu__link" aria-label="vers la page about"
+                  >about</a
+                >
+                <ul class="menu__item--sub">
+                  <li class="menu__item">
+                    <a
+                      href="#"
+                      class="menu__link"
+                      aria-label="la page sub category 1"
+                      >Sub Cat 1</a
+                    >
+                  </li>
+                  <li class="menu__item">
+                    <a
+                      href="#"
+                      class="menu__link"
+                      aria-label="la page sub category 2"
+                      >sub category 2</a
+                    >
+                  </li>
+                  <li class="menu__item">
+                    <a
+                      href="#"
+                      class="menu__link"
+                      aria-label="la page sub category 3"
+                      >Sous categorie 3</a
+                    >
+                  </li>
+                </ul>
               </li>
               <li class="menu__item">
-                <a href="#" class="menu__link" aria-label="contact">contact</a>
+                <a href="#" class="menu__link" aria-label="vers la page contact"
+                  >contact</a
+                >
               </li>
             </ul>
           </nav>

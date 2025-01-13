@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dialog aka modal</title>
+    <style>
+     body{
+      font-family: system-ui, sans-serif;
+      background: hsl(0, 0%, 80%);
+     }
+     button {
+        display: block;
+        margin: 40px auto;
+        border: 0;
+        border-radius: 8px;
+        padding: 7px 32px;
+        font-size: 14px;
+        font-weight: 600;
+        background: rgb(0, 149, 246);
+        cursor: pointer;
+        color: #fff;
+        transition: all 240ms linear;
+      }
+      button:hover {
+        filter: brightness(0.8);
+      }
+      button:active {
+        transform: scale(0.9);
+      }
+      dialog {
+        margin: 10% auto;
+        width: 80%;
+        max-width: 350px;
+        background-color: #fff;
+        padding: 34px;
+        border: 0;
+        border-radius: 5px;
+      }
+      dialog > p {
+        text-align: center;
+        margin: 0;
+      }
+      dialog > p:first-of-type {
+        margin: 0 auto 20px;
+        font-size: 32px;
+        font-weight: 600;
+      }
+      dialog > button {
+        margin: 20px auto;
+      }
+      ::backdrop {
+       background-image: linear-gradient(
+        45deg,
+        magenta,
+        rebeccapurple,
+        dodgerblue,
+        green
+      );
+      opacity: 0.75;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="open-button">Open modal 🙈</button>
+
+    <dialog class="modal" >
+      <p>Udohgram</p>
+      <p>Insert pretty picture</p>
+      <button class="close-button">Close modal</button>
+      <p>Sorry, you can't login. You can't contact support either.</p>
+    </dialog>
+
+    <script>
+      const modal = document.querySelector(".modal");
+      const openButton = document.querySelector(".open-button");
+      const closeButton = document.querySelector(".close-button");
+
+      openButton.addEventListener("click", () => {
+        modal.showModal();
+      });
+
+      closeButton.addEventListener("click", () => {
+        modal.close();
+      });
+    </script>
+  </body>
+</html>
