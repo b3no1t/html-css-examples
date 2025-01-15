@@ -116,18 +116,33 @@
 
          */
          const translateValue = currentIndex * -main.offsetWidth;
+
+         console.log(`translateValue: ${translateValue}px`);
+         
          slideRow.style.transform = `translateX(${translateValue}px)`;
        
+
          btns.forEach((btn, index) => {
+
+          console.log(`updating slide to ${currentIndex}`);
+          
            btn.classList.toggle("active", index === currentIndex);
+
          });
        }
 
         btns.forEach((btn, index) => {
+
           btn.addEventListener("click", () => {
-            console.log("clicked ", index);
+
+            console.log("click on button ", index);
+
             currentIndex = index;
+
             updateSlide();
+            
+            console.log(`Slide changed to index: ${currentIndex}`);
+
           });
         });
 
