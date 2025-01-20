@@ -1,0 +1,94 @@
+:root {
+  --color-prim: lightblue;
+  --color-bg: lightgray;
+  --color-sheet: white;
+  --color-fg: black;
+  font-family: system-ui, sans-serif;
+}
+
+[popover],
+::backdrop {
+  transition: display 400ms ease-in-out allow-discrete,
+              transform 288ms ease-in-out, 
+              opacity 160ms ease-in-out;
+}
+
+[popover] {
+  position: fixed;
+  inset: 0px;
+
+  width: fit-content;
+  height: fit-content;
+  padding: 0.25em;
+  opacity: 0;
+  transform: translateY(1rem);
+
+  &::backdrop {
+    background-color: var(--color-fg);
+    opacity: 0;
+  }
+
+  &:popover-open {
+    opacity: 1;
+    transform: translateY(0);
+
+    &::backdrop {
+      opacity: 0.5;
+    }
+  }
+  /*
+   ! @starting-style: Fonctionnalité de Transition css 
+   @starting-style permet de cibler l'état du style initial d'un élément avant transition.
+   dans ce cas, nous utilisons @starting-style pour cibler l'état initial de l'élément qui possède la classe "popover-open".
+   nous utilisons cette fonction pour définir les valeurs initiales de l'élément avant qu'il ne soit affiché.
+   cela permet de créer un effet de transition plus fluide.
+  */
+  @starting-style {
+    &:popover-open {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+
+    &:popover-open::backdrop {
+      opacity: 0;
+    }
+  }
+}
+
+/** 
+  => just styling 
+**/
+
+html,
+body {
+  display: grid;
+  place-content: center;
+  gap: 2rem;
+  height: 100%;
+}
+
+.text-lg {
+  font-size: 4rem;
+}
+
+.card {
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.btn {
+  font-size: 2rem;
+  padding: 0.33rem 0.75rem;
+  box-shadow: 2px 4px 0 var(--color-fg);
+  background-color: var(--color-sheet);
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+  color: var(--color-fg);
+
+  &:focus,
+  &:hover {
+    background-color: var(--color-sheet);
+    box-shadow: 0px 0px 0 var(--color-bg);
+    transform: translate(4px, 4px);
+  }
+}

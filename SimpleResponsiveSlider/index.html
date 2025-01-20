@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Slider, Vanilla JS</title>
-
     <link rel="stylesheet" href="./style.css" />
-
     <meta name="author" content="Benoit Lepage" />
   </head>
   <body>
@@ -98,10 +96,13 @@
     </main>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+
+        /*les variables ---------------------------------*/
         const btns = document.querySelectorAll(".btn");
         const slideRow = document.getElementById("slide-row");
         const main = document.querySelector("main");
-
+        /* /les variables ---------------------------------*/
+        
         let currentIndex = 0;
 
         function updateSlide() {
@@ -109,9 +110,10 @@
 
           Voici ce que cette fonction: 
 
-          Calcule la nouvelle position de la diapositive en multipliant l'index actuel (currentIndex) par la largeur négative de l'élément principal (main.offsetWidth). Cette valeur est utilisée pour convertir horizontalement la rangée de diapositives.
+          Calcule la nouvelle position de la slide en multipliant l'index actuel (currentIndex) par la largeur négative de l'élément principal (main.offsetWidth). Cette valeur est utilisée pour convertir horizontalement la rangée de diapositives.
 
           Applique la translation calculée à l'élément slideRow à l'aide de la propriété CSS transform.
+
           Met à jour les boutons indicateurs en faisant basculer la classe « active » sur le bouton correspondant à l'index actuel (currentIndex).
 
          */
@@ -120,13 +122,15 @@
          console.log(`translateValue: ${translateValue}px`);
          
          slideRow.style.transform = `translateX(${translateValue}px)`;
-       
+         
+  
 
          btns.forEach((btn, index) => {
 
           console.log(`updating slide to ${currentIndex}`);
+
+          btn.classList.toggle("active", index === currentIndex);
           
-           btn.classList.toggle("active", index === currentIndex);
 
          });
        }
@@ -149,6 +153,8 @@
         window.addEventListener("resize", () => {
           updateSlide();
         });
+
+
       });
     </script>
   </body>
