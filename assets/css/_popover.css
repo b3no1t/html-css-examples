@@ -38,11 +38,13 @@
   }
   /*
    ! @starting-style: Fonctionnalité de Transition css 
-   @starting-style permet de cibler l'état du style initial d'un élément avant transition.
+   @starting-style permet de cibler l'état du style initial d'un élément avant la transition.
    dans ce cas, nous utilisons @starting-style pour cibler l'état initial de l'élément qui possède la classe "popover-open".
    nous utilisons cette fonction pour définir les valeurs initiales de l'élément avant qu'il ne soit affiché.
    cela permet de créer un effet de transition plus fluide.
   */
+
+  
   @starting-style {
     &:popover-open {
       opacity: 0;
