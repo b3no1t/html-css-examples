@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>OWL Selector: exo hero section</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.hero__block {
+				width: 100vw;
+				height: 280px;
+				background-image: url(https://placehold.co/600x400);
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			.hero__card {
+				border: 2px solid gray;
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			.card__content {
+				--flow-space: 1.4rem;
+			}
+
+			.flow > * + * {
+				margin-top: var(--flow-space, 1em);
+			}
+			@media (min-width: 500px) {
+				.hero {
+					display: grid;
+				}
+				.hero__block {
+					grid-column: 1 / -1;
+				}
+				.container__card {
+					display: grid;
+					grid-template-columns: repeat( 3, 1fr );
+					grid-gap: 1em
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="container">
+        
+				<div class="hero flow">
+
+				<div class="hero__block" style="background-image: url(https://placehold.co/600x400)">
+						<span>the hero image</span>
+					</div>
+
+					<div class="container__card"> 
+
+						<div class="hero__card">
+
+							<img src="https://placehold.co/600x400" alt="image" />
+
+							<div class="card__content flow">
+								<h2>Titre</h2>
+								<p>Lorem, ipsum dolor.</p>
+								<p>Lorem, ipsum</p>
+								<p>Lorem, ipsum dolor. Lorem, ipsum dolor.</p>
+							</div>
+
+						</div>
+
+						<div class="hero__card cta">
+							<img src="https://placehold.co/600x400" alt="image" />
+							<div class="card__content flow">
+								<h2>BUY SOME STUFF</h2>
+								<a href="#">BUY IT</a>
+							</div>
+						</div>
+
+						<div class="hero__card">
+							<img src="https://placehold.co/600x400" alt="image" />
+							<div class="card__content flow">
+								<h2>Titre</h2>
+								<p>Lorem, ipsum dolor.</p>
+								<p>Lorem, ipsum</p>
+								<p>Lorem, ipsum dolor. Lorem, ipsum dolor.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+	</body>
+</html>
